@@ -1,0 +1,36 @@
+<h1>Recommendation system for only you!</h1>
+<h3>Let's find your style music which you have not explored yet!</h3>
+
+<div ng-show="playlists.length > 0">
+  <h2>Recommended Playlist</h2>
+   <ul class="playlists">
+       <div class="playlistcss">
+           <li ng-repeat="t in playlists">
+              <a href="#/users/{{t.owner.id}}/playlists/{{t.id}}">
+                <responsive-cover ng-model="t.images"></responsive-cover>
+              </a>
+              <p>
+                <b><a href="#/users/{{t.owner.id}}/playlists/{{t.id}}">{{t.name}}</a></b>
+              </p>
+            </li>
+       </div>
+  </ul>
+  <hr/>
+  <br/>
+</div>
+<div ng-show="featuredPlaylists.length > 0">
+  <h2>Recommended playlist from Spotify</h2>
+  <ul class="playlists">
+    <li ng-repeat="t in featuredPlaylists">
+      <a href="#/users/{{t.owner.id}}/playlists/{{t.id}}">
+        <responsive-cover ng-model="t.images"></responsive-cover>
+      </a>
+      <p>
+        <b><a href="#/users/{{t.owner.id}}/playlists/{{t.id}}">{{t.name}}</a></b>
+      </p>
+    </li>
+  </ul>
+  <hr/>
+  <br/>
+</div>
+
